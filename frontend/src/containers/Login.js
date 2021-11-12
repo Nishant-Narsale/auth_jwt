@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, Redirect} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 
@@ -50,9 +50,14 @@ const Login = () => {
                 <button type="submit" className="submit-button">Submit</button>
 
             </form>
-
+            <p>Don't Have an account? <Link to="/signup">Sign Up</Link></p>
+            <p>Forgor your password? <Link to="/reset-password">Reset Password</Link></p>
         </div>
     )
 }
 
-export default Login;
+const mapStateToProps = state => {
+    // is authenticated
+}
+
+export default connect(null)(Login);
